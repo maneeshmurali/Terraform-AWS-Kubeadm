@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd aws-vpc
+cd aws-vpc_back
 
 terraform init
 
@@ -19,7 +19,7 @@ echo "wait"
 
 sleep 5s
 
-cd aws-kube
+cd aws-kube_back
 
 touch 1.txt
 touch 2.txt
