@@ -9,7 +9,7 @@ terraform apply --var-file example.tfvars -auto-approve  >> output.txt
 
 sleep 10s
 
-grep  id=subnet output.txt | cut -d = -f 2 | cut -d ] -f 1 >> /root/kube-scripts/out.txt
+cat output.txt | grep subnet_id | awk {'print $4'} | sed 's/^.//' | cut -d '"' -f1  >> /root/kube-scripts/out.txt
 
 >output.txt
 
@@ -44,6 +44,8 @@ cat 3.txt | while read -r line; do  sed -i "s|NODE2|$line|g" example.tfvars; rm 
 sleep 5s
 
 echo "replaced"
+
+sleep 20s
 
 terraform init
 

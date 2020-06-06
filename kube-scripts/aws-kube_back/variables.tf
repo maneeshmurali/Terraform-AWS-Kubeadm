@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "Region where Cloud Formation is created"
-  default     = "us-east-2"
+  default     = "REG"
 }
 
 variable "cluster_name" {
